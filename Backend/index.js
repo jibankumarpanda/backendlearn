@@ -1,6 +1,6 @@
 import app from "./server.js";
 import mongodb from "mongodb";
-import ReviewDAO from "./dao/reviewDAO.js";
+//import ReviewDAO from "./dao/reviewDAO.js";
 
 const mongo_client = mongodb.mongo_client
 const mongodb_username = prossece.env['mongodb_username']
