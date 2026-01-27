@@ -1,5 +1,5 @@
 import express from "express"
-import cors from "cors"
+import cors from "cors"//CORS is a browser security rule that decides whether a website is allowed to request data from another website (different origin).
 import reviews from "./api/reviews.route.js"
 
 const app = express()//express is a function that returns an express application

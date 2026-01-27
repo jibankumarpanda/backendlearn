@@ -1,6 +1,6 @@
 import app from "./server.js";
 import mongodb from "mongodb";
-//import ReviewDAO from "./dao/reviewDAO.js";
+import ReviewDAO from "./dao/reviewDAO.js";
 
 const mongo_client = mongodb.mongo_client
 const mongodb_username = prossece.env['mongodb_username']
@@ -21,7 +21,7 @@ mongo_client.connect(uri,
     })
     //async function is a function that returns a promise and its run as sycronously or 
     // it can be run asynchronously or its run the other things while waiting for the promise to resolve
-.then(async client=>{//.then() is used to handle the promise and client is the client object and async client is the client object used to handle the promise
+.then(async client=>{
     await ReviewDAO.injectDB(client)//await is used to wait for the promise to resolve and ReviewDAO is the class and injectDB is the method
     app.listen(port, ()=>{
         console.log(`Listening on port ${port}`)})//app.listen() is used to listen to the port and console.log() is used to print the port
