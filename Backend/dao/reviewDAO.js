@@ -67,8 +67,19 @@ export default class ReviewDAO{//ReviewDAO is a class that is used to handle the
             console.error(`Unable to delete review: ${e}`)
             return {error: e}
         }
-        
+       
     }
+    static async getReviewsByMovieID(moviedID){
+        try{
+            const cursor = await reviews.find({
+                movieId: presentInt(movieId)
+            })
+            return cursor.toArray()
+        } catch(e){
+            console.error(`Unable to get reviews: ${e}`)
+            return {error: e}
+        }  
+        }
 }
 
     
